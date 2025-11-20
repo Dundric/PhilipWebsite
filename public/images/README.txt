@@ -1,0 +1,1 @@
+Place your profile photo here as `profile.jpg` (or update the `src` in `app/page.tsx`). Recommended size around 800x1000 for good quality; Next.js will optimize at runtime.

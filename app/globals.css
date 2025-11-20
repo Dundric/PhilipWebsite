@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@supports (view-transition-name: none) {
+	/* Target for project card → page transition */
+	.vt-project {
+		view-transition-name: project-card;
+	}
+
+	/* Smooth expand timing */
+	::view-transition-group(project-card) {
+		animation-duration: 900ms;
+		animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	/* During transition, make the destination container full-screen so the card expands to fill it */
+	html.is-vt .vt-project {
+		position: fixed;
+		inset: 0;
+		width: 100vw;
+		height: 100vh;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		background: white;
+		z-index: 50;
+	}
+}
