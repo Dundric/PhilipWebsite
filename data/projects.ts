@@ -5,6 +5,7 @@ export interface Project {
   techStack: string[];
   description: string[];
   gallery: string[];
+  link: string;
 }
 
 export const projects: Project[] = [
@@ -25,7 +26,8 @@ export const projects: Project[] = [
       "/images/geni3.png",
       "/images/geni4.png",
       "/images/geni5.png"
-    ]
+    ],
+    link: "https://geni.zone"
   },
   {
     slug: "research",
@@ -42,7 +44,8 @@ export const projects: Project[] = [
       "/images/research1.png",
       "/images/research2.png",
       "/images/research3.png",
-    ]
+    ],
+    link: "https://npre.illinois.edu/about/illinois-microreactor-project"
   }
 ];
 

@@ -5,6 +5,7 @@ import { Project, projects } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
 import Image from "next/image";
 import ProjectGallery from "./ProjectGallery";
+import { ExternalLink } from "lucide-react";
 
 type Rect = {
     top: number;
@@ -141,9 +142,12 @@ export default function ProjectsGrid() {
                                 {/* Text Content */}
                                 <div className="space-y-6">
                                     <div>
-                                        <h2 className={`font-bold text-gray-900 mb-2 transition-all duration-500 ${isExpanded ? "text-4xl" : "text-xl"
+                                        <h2 className={`flex items-center gap-4 font-bold text-gray-900 mb-2 transition-all duration-500 ${isExpanded ? "text-4xl" : "text-xl"
                                             }`}>
                                             {activeProject.title}
+                                            <a href={activeProject.link} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="hover:opacity-70 transition-opacity">
+                                                <ExternalLink size={24} />
+                                            </a>
                                         </h2>
                                         <p className="text-xl text-gray-600">{activeProject.role}</p>
                                     </div>
@@ -174,7 +178,7 @@ export default function ProjectsGrid() {
                                         ))}
                                     </div>
 
-                                        <div className="space-y-12">
+                                    <div className="space-y-12">
                                         <ProjectGallery images={activeProject.gallery} />
                                     </div>
                                 </div>

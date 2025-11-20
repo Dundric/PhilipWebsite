@@ -103,6 +103,7 @@ export default function ProjectCard({ project, onClick, isHidden }: ProjectCardP
             ))}
           </div>
         </div>
+
       </div>
     </a>
   );
